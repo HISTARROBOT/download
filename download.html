@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+
+<link rel="stylesheet" href='https://histarrobot.github.io/download/style.css' />
+<title>海星机器人下载</title>
+  <style>
+    /* 阴影 */
+    .cover-shadow {display: none;position: absolute;top: 0%;left: 0%;width: 100%;
+                   height: 100%;background-color: black;z-index: 10;opacity: .7;}
+        .cover-shadow2 {display: none;position: absolute;top: 0%;left: 0%;width: 100%;
+                   height: 100%;background-color: black;z-index: 10;opacity: .7;}               
+    /* 分享提示 */
+    .share-tips {position: relative;padding: 10px 20px;z-index: 100;}
+    .share-tips_content {text-align: left;font-size: 24px;line-height: 25px;color: #fff;}
+        .share-tips2 {position: relative;padding: 10px 20px;z-index: 100;}
+    .share-tips_content2 {text-align: left;font-size: 24px;line-height: 25px;color: #fff;}
+  </style>
+</head>
+<body>
+  <div class="cover-shadow">
+    <div class="share-tips">
+      <p class="share-tips_content"> 
+        1，请点击右上角分享按钮··· <br>
+        2，选择“在浏览器中打开” <br>
+        3，再次点击“立即下载”
+      </p>
+    </div>
+  </div>
+    <div class="cover-shadow2">
+    <div class="share-tips2">
+      <p class="share-tips_content2"> 
+        1，请点击右上角分享按钮··· <br>
+        2，选择“在Safari中打开” <br>
+        3，再次点击“立即下载”
+      </p>
+    </div>
+  </div>
+ <div class="content channel-page">
+  <div class="page-index">
+    <div style="padding-top: 20px;padding-left:10px">
+      <p style="line-height:1.3rem;font-size:1.6rem;">
+        海星机器人-<span style="color: green">app下载</span>
+      </p>
+    </div>
+    <div class="udid-content channel-content">
+      <img style="width: 72px; height: 72px" alt="" src="http://19386615.s21d-19.faiusrd.com/0/ABUIABAEGAAgvISj7wUo4NC3sAIwgAI4gAI?f=032de017803384eee0390263164a9b2.png&v=1575535164" />
+      <p style="font-size:1.6rem;margin:2px auto;">海星机器人</p>
+    </div>
+    <div class="channel-title">
+  <p>欢迎使用海星机器人，更多惊喜与乐趣请下载海星机器人应用，请点击下方“立即下载”。</p>
+</div> 
+  
+  
+
+<center><button style='font-size:24px;background:green' onclick="test()">立即下载</button></center>
+<script>
+	function test(){
+
+ if((/MicroMessenger/i.test(navigator.userAgent))&&(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent))) {
+    coverShadow2.style.display = 'block'
+    return
+  } 
+else if((/MicroMessenger/i.test(navigator.userAgent))&&(/(Android)/i.test(navigator.userAgent)))
+{
+	    coverShadow.style.display = 'block'
+    return
+	}
+
+	if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) { //判断iPhone|iPad|iPod|iOS
+  //alert(navigator.userAgent); 
+  window.location.href ="https://itunes.apple.com/cn/app/id1487668367";
+} else if (/(Android)/i.test(navigator.userAgent)) {  //判断Android
+  //alert(navigator.userAgent); 
+  window.location.href ="http://19386615.s21d-19.faiusrd.com/0/ABUIABBKGAAg__eh7wUogJKgjgQ?f=histar_1205_zh.apk&v=1575515131";
+} else { //pc
+  window.location.href ="http://www.histarbot.com";
+};	
+		
+		
+		}
+	</script>
+
+</body>
+</html>
+<script type="text/javascript">
+
+//判断是否是iOS设备
+var isIos = function(){
+  var ua = navigator.userAgent.toLowerCase();
+  if(/(iPhone|iPad|iPod|iOS)/i.test(ua)){
+    return true;
+  }
+  return false;
+}
+
+//判断是否是微信环境
+var isWeChat = function(){
+ 
+  if(/MicroMessenger/i.test(navigator.userAgent)){
+    return true;
+  }else{
+    return false;
+  }
+}
+
+//判断是否是QQ环境
+var isQQ = function(){
+ 
+  if(/MQQBrowser/i.test(navigator.userAgent) ||/QQ/i.test(navigator.userAgent) ){
+    return true;
+  }else{
+    return false;
+  }
+}
+
+//判断是否是Android环境
+var isAndroid = function(){
+  var ua = navigator.userAgent.toLowerCase();
+  if(/Android/i.test(ua)){
+    return true;
+  }
+    return false;
+}
+
+
+
+
+
+// 下载按钮方法
+var coverShadow = document.querySelector('.cover-shadow')
+var coverShadow2 = document.querySelector('.cover-shadow2')
+var downloadClick = function () {
+  downloadUrl = "";
+  //如果是在微信与qq中打开给出提示“微信或qq不支持下载请前往浏览器中打开”
+  if (isWeChat()&&isIos()) {
+    coverShadow2.style.display = 'block'
+    return
+  } 
+   else if (isWeChat()&&isAndroid()) {
+    coverShadow.style.display = 'block'
+    return
+  }
+  else if (isQQ()) {
+    coverShadow.style.display = 'block'
+    return
+  }
+
+  //判断设备，来打开不同链接
+  if (isIos()) {
+
+    //如果是ios设备打开App store
+    var downloadUrl = "https://itunes.apple.com/cn/app/id1487668367";
+  } else if (isAndroid()) {
+    //如果是android设备打开打开应用宝
+
+    var downloadUrl = "http://19386615.s21d-19.faiusrd.com/0/ABUIABBKGAAg__eh7wUogJKgjgQ?f=histar_1205_zh.apk&v=1575515131";
+  }
+
+  if (downloadUrl == "") {
+    return;
+  }
+  window.location.href = downloadUrl;
+}
+</script>
